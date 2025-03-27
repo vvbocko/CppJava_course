@@ -52,8 +52,8 @@ public class ArabRzym
             throw new ArabRzymException("Liczba arabska poza zakresem (1-3999): " + arab);
         }
 
-        StringBuilder wynik = new StringBuilder();
-        int i = liczby.length - 1;
+        StringBuilder wynik = new StringBuilder(); //
+        int i = liczby.length - 1;  //zaczynamy od M - 1000
 
         while (arab > 0)
         {

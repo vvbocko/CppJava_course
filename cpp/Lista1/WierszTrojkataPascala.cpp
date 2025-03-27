@@ -1,4 +1,5 @@
 #include "WierszTrojkataPascala.hpp"
+#include <string>
 
 WierszTrojkataPascala::WierszTrojkataPascala(int n) : n(n)
 {
