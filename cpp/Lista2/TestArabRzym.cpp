@@ -4,31 +4,34 @@
 #include <stdexcept>
 #include "ArabRzym.hpp"
 
-int main(int argc, char* argv[]) {
-    try
+int main(int argc, char* argv[])
+{
+    if (argc < 2)
     {
-        if (argc != 2)
-        {
-            std::cout << "Użycie: ./program <liczba_arabska_lub_rzymska>" << std::endl;
-            return 1;
-        }
+        std::cout << "Brak argumentu" << std::endl;
+        return 1;
+    }
 
-        std::string input = argv[1];
-
+    for(int i = 1; i < argc; ++i)
+    {
+        std::string input = argv[i];
+        
         try
         {
             int arab = std::stoi(input);
-            std::cout << "Rzymska: " << ArabRzym::arab2rzym(arab) << std::endl;
+            std::cout << input <<" Rzymska: " <<ArabRzym::arab2rzym(arab) << std::endl;
         } 
         catch (std::invalid_argument&)
         {
-            std::cout << "Arabska: " << ArabRzym::rzym2arab(input) << std::endl;
+            try
+            {
+                std::cout << input << " Arabska: " << ArabRzym::rzym2arab(input) << std::endl;
+            }
+            catch (const std::exception& e)
+            {
+                std::cerr << "Blad: " << input << e.what() << std::endl;
+            }
         }
-    }
-    catch (const std::exception& e)
-    {
-        std::cerr << "Błąd: " << e.what() << std::endl;
-        return 1;
     }
     return 0;
 }
