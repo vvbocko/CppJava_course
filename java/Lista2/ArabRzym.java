@@ -3,16 +3,9 @@
 // z arabskiego na rzymski -- if integer try catch exeption - else then rzymski is true
 // try catch exeptions: ujemna, nie-integer (nie naturalna)
 
-class ArabRzymException extends Exception
-{
-    public ArabRzymException(String message)
-    {
-        super(message); 
-    }
-}
-
 public class ArabRzym
 {
+
     private static final String[] liczby = { "I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M" };
     private static final int[] wartosci = { 1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000 };
 
@@ -38,7 +31,7 @@ public class ArabRzym
         if (arab2rzym(wynik).equals(rzym))
         {
             return wynik;
-        } 
+        }
         else
         {
             throw new ArabRzymException("Niepoprawny format liczby rzymskiej: " + rzym);
@@ -52,8 +45,8 @@ public class ArabRzym
             throw new ArabRzymException("Liczba arabska poza zakresem (1-3999): " + arab);
         }
 
-        StringBuilder wynik = new StringBuilder(); //
-        int i = liczby.length - 1;  //zaczynamy od M - 1000
+        StringBuilder wynik = new StringBuilder();
+        int i = liczby.length - 1;
 
         while (arab > 0)
         {
@@ -61,12 +54,21 @@ public class ArabRzym
             {
                 wynik.append(liczby[i]);
                 arab -= wartosci[i];
-            } else
+            }
+            else
             {
                 i--;
             }
         }
 
         return wynik.toString();
+    }
+}
+
+class ArabRzymException extends Exception
+{
+    public ArabRzymException(String message)
+    {
+        super(message);
     }
 }
