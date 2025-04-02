@@ -29,7 +29,7 @@ int ArabRzym::rzym2arab(const std::string& rzym)
     }
     else
     {
-        throw std::invalid_argument("Niepoprawny format liczby rzymskiej: " + rzym);
+        throw std::invalid_argument(" ma niepoprawny format liczby rzymskiej");
     }
 }
 
@@ -37,7 +37,7 @@ std::string ArabRzym::arab2rzym(int arab)
 {
     if (arab < 1 || arab > 3999)
     {
-        throw std::out_of_range("Liczba arabska poza zakresem (1-3999): " + std::to_string(arab));
+        throw std::out_of_range(" poza zakresem (1-3999)");
     }
 
     std::string wynik;

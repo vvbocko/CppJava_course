@@ -4,7 +4,7 @@ public class ArabRzymTest
     {    
         if (args.length == 0)
         {
-            System.out.println("Brak argumentow");
+            System.out.println("Brak argumentu");
             return;
         }
 
@@ -15,11 +15,11 @@ public class ArabRzymTest
                 try
                 {
                     int arab = Integer.parseInt(input);
-                    System.out.println(input + " -> " + ArabRzym.arab2rzym(arab));
+                    System.out.println(input + " --> " + ArabRzym.arab2rzym(arab));
                 }
                 catch (NumberFormatException e)
                 {
-                    System.out.println(input + " -> " + ArabRzym.rzym2arab(input));
+                    System.out.println(input + " --> " + ArabRzym.rzym2arab(input));
                 }
             }
             catch (ArabRzymException e)

@@ -18,19 +18,21 @@ int main(int argc, char* argv[])
         
         try
         {
-            int arab = std::stoi(input);
-            std::cout << input <<" Rzymska: " <<ArabRzym::arab2rzym(arab) << std::endl;
-        } 
-        catch (std::invalid_argument&)
-        {
             try
             {
-                std::cout << input << " Arabska: " << ArabRzym::rzym2arab(input) << std::endl;
+                int arab = std::stoi(input);
+                std::cout << input <<" --> " <<ArabRzym::arab2rzym(arab) << std::endl;
             }
-            catch (const std::exception& e)
+            catch (std::invalid_argument&)
             {
-                std::cerr << "Blad: " << input << e.what() << std::endl;
+                std::cout << input << " --> " << ArabRzym::rzym2arab(input) << std::endl;
             }
+        } 
+        catch (const std::exception& e)
+        {
+
+            std::cerr << "Blad: " << input << e.what() << std::endl;
+
         }
     }
     return 0;

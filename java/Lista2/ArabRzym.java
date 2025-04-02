@@ -34,7 +34,7 @@ public class ArabRzym
         }
         else
         {
-            throw new ArabRzymException("Niepoprawny format liczby rzymskiej: " + rzym);
+            throw new ArabRzymException(rzym + " ma niepoprawny format liczby rzymskiej");
         }
     }
 
@@ -42,7 +42,7 @@ public class ArabRzym
     {
         if (arab < 1 || arab > 3999)
         {
-            throw new ArabRzymException("Liczba arabska poza zakresem (1-3999): " + arab);
+            throw new ArabRzymException("Liczba poza zakresem (1-3999)");
         }
 
         StringBuilder wynik = new StringBuilder();
