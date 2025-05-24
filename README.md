@@ -6,10 +6,10 @@ This repository contains tasks and projects completed as part of the Object-Orie
 ✅ Classes and objects  
 ✅ Inheritance, inner classes, enumerated types  
 ✅ Exception handling  
+✅ Graphical user interface  
+✅ Code documentation 
 
 🚧 Currently Learning:  
-🔜 Graphical user interface  
-🔜 Code documentation  
 🔜 Multithreading  
 🔜 Collections, generics, and data serialization  
 🔜 Reflective programming and lambda expressions  
